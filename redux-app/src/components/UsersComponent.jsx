@@ -10,19 +10,20 @@ const Users = () => {
     useEffect(() => {
         dispatch(getUsers([{
             id: 1,
-            name: 'Len GA',
+            name: 'Len Ga',
             company: {
-                name: 'Roma-Crop',
+                name: 'Roma-Corp',
                 catchPhrase: 'Multi-layered client-server neural-net',
             }
         }]))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <>
-            {users.length > 0 && users.map((user) => {
+            {users.length > 0 && users.map((user) => (
                 <Card user={user} key={ user.id }/>
-            })}
+            ))}
             {users.length === 0 && <p>No users available!</p>}
         </>
     )
